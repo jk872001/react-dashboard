@@ -3,7 +3,8 @@ import useTokenStore from '@/store';
 
 const api = axios.create({
     // todo: move this value to env variable.
-    baseURL: import.meta.env.VITE_PUBLIC_BACKEND_URL,
+    // baseURL: import.meta.env.VITE_PUBLIC_BACKEND_URL,
+    baseURL: "https://api-test.marginpilot.io",
     headers: {
         'Content-Type': 'application/json',
     },
@@ -23,11 +24,11 @@ export const login = async (data: { email: string; password: string }) =>
 export const register = async (data: { name: string; email: string; password: string }) =>
     api.post('/api/users/register', data);
 
-export const getBooks = async () => api.get('/api/books');
+export const getUsers = async () => api.get('/users');
 
-export const createBook = async (data: FormData) =>
-    api.post('/api/books', data, {
-        headers: {
-            'Content-Type': 'multipart/form-data',
-        },
+export const createUser = async (data: FormData) =>
+    api.post('/users', data, {
+        // headers: {
+        //     'Content-Type': 'multipart/form-data',
+        // },
     });

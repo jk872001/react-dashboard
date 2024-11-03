@@ -3,13 +3,14 @@ export interface Author {
     name: string;
 }
 
-export interface Book {
+export interface User {
     _id: string;
-    title: string;
-    description: string;
-    genre: string;
-    author: Author;
-    coverImage: string;
-    file: string;
-    createdAt: string;
+    name: string;
+    email: string;
+    org_id: number;
+    // genre: string;
+    // author: Author;
+    // coverImage: string;
+    // file: string;
+    created_at: string;
 }
